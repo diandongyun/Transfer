@@ -32,18 +32,20 @@
 
 ---
 
+---
+
 ## 🌐 协议部署说明
 
 ### 1️⃣ hysteria2 中转 hysteria2 协议
 **落地机执行**  
 ```bash
-bash <(curl -Ls https://raw.githubusercontent.com/diandongyun/Transfer/blob/main/hysteria2-hysteria2/destination-node.sh)
+bash <(curl -Ls https://raw.githubusercontent.com/diandongyun/Transfer/main/hysteria2-hysteria2/destination-node.sh)
 ```
 📂 在落地机查找 `/opt/hysteria2_client.yaml` 文件，将其下载并上传到中转机 `/opt/` 路径下。
 
 **中转机执行**  
 ```bash
-bash <(curl -Ls https://raw.githubusercontent.com/diandongyun/Transfer/blob/main/hysteria2-hysteria2/relay-node.sh)
+bash <(curl -Ls https://raw.githubusercontent.com/diandongyun/Transfer/main/hysteria2-hysteria2/relay-node.sh)
 ```
 📂 下载 `/opt/hysteria2_relay_client.yaml` 文件，在 v2rayN 中导入自定义配置文件即可。
 
@@ -52,13 +54,13 @@ bash <(curl -Ls https://raw.githubusercontent.com/diandongyun/Transfer/blob/main
 ### 2️⃣ socks5 中转 TUIC 协议
 **落地机执行**  
 ```bash
-bash <(curl -Ls https://raw.githubusercontent.com/diandongyun/Transfer/blob/main/socks5-TUIC/socks5.sh)
+bash <(curl -Ls https://raw.githubusercontent.com/diandongyun/Transfer/main/socks5-TUIC/socks5.sh)
 ```
 📂 查找 `socks5_config.json` 文件，下载并上传到中转机 `/opt/` 路径下。
 
 **中转机执行**  
 ```bash
-bash <(curl -Ls https://raw.githubusercontent.com/diandongyun/Transfer/blob/main/socks5-TUIC/TUIC.sh)
+bash <(curl -Ls https://raw.githubusercontent.com/diandongyun/Transfer/main/socks5-TUIC/TUIC.sh)
 ```
 📥 根据节点信息在 v2rayN 中导入自定义配置文件即可。
 
@@ -67,13 +69,13 @@ bash <(curl -Ls https://raw.githubusercontent.com/diandongyun/Transfer/blob/main
 ### 3️⃣ socks5 中转 vless 协议
 **落地机执行**  
 ```bash
-bash <(curl -Ls https://raw.githubusercontent.com/diandongyun/Transfer/blob/main/socks5-vless/socks5.sh)
+bash <(curl -Ls https://raw.githubusercontent.com/diandongyun/Transfer/main/socks5-vless/socks5.sh)
 ```
 📂 查找 `socks5_config.json` 文件，下载并上传到中转机 `/opt/` 路径下。
 
 **中转机执行**  
 ```bash
-bash <(curl -Ls https://raw.githubusercontent.com/diandongyun/Transfer/blob/main/socks5-vless/vless.sh)
+bash <(curl -Ls https://raw.githubusercontent.com/diandongyun/Transfer/main/socks5-vless/vless.sh)
 ```
 📥 根据节点信息在 v2rayN 中导入自定义配置文件即可。
 
@@ -82,13 +84,13 @@ bash <(curl -Ls https://raw.githubusercontent.com/diandongyun/Transfer/blob/main
 ### 4️⃣ vless 中转 socks5 协议
 **落地机执行**  
 ```bash
-bash <(curl -Ls https://raw.githubusercontent.com/diandongyun/Transfer/blob/main/vless-socks5/vless.sh)
+bash <(curl -Ls https://raw.githubusercontent.com/diandongyun/Transfer/main/vless-socks5/vless.sh)
 ```
 📂 查找 `/opt` 文件夹下的 vless JSON 配置文件，下载并上传到中转机 `/opt/` 路径下。
 
 **中转机执行**  
 ```bash
-bash <(curl -Ls https://raw.githubusercontent.com/diandongyun/Transfer/blob/main/vless-socks5/socks5.sh)
+bash <(curl -Ls https://raw.githubusercontent.com/diandongyun/Transfer/main/vless-socks5/socks5.sh)
 ```
 📥 根据节点信息在 v2rayN 中导入自定义配置文件即可。
 
