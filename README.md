@@ -1,6 +1,9 @@
-<h1 align="center" style="color:red;">
+<table><tr><td>
+<h2 align="center" style="color:red;">
 🚨 本开源项目由点动云独家提供技术支持，仅供交流学习使用，禁止用于违法用途，请各位自行遵守 🚨
-</h1>
+</h2>
+</td></tr></table>
+
 
 
 
