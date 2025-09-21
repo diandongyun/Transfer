@@ -22,11 +22,7 @@
 
 ---
 
-# 🌐 协议配置（梅花布局）
 
-<table>
-<tr>
-<td width="50%" valign="top">
 
 ### 🌸 hysteria2 中转 hysteria2
 **落地机执行**
@@ -34,8 +30,7 @@
 bash <(curl -Ls https://raw.githubusercontent.com/diandongyun/Transfer/blob/main/hysteria2-hysteria2/destination-node.sh)
 ````
 
-在落地机找到：`/opt/hysteria2_client.yaml`
-上传至中转机的：`/opt/`
+在落地机找到：`/opt/hysteria2_client.yaml`上传至中转机的：`/opt/`
 
 **中转机执行**
 
@@ -46,8 +41,6 @@ bash <(curl -Ls https://raw.githubusercontent.com/diandongyun/Transfer/blob/main
 在中转机找到：`/opt/hysteria2_relay_client.yaml`
 导入 v2rayN 配置即可。
 
-</td>
-<td width="50%" valign="top">
 
 ### 🌸 socks5 中转 TUIC
 
@@ -57,8 +50,7 @@ bash <(curl -Ls https://raw.githubusercontent.com/diandongyun/Transfer/blob/main
 bash <(curl -Ls https://raw.githubusercontent.com/diandongyun/Transfer/blob/main/socks5-TUIC/socks5.sh)
 ```
 
-找到：`socks5_config.json`
-上传至中转机的：`/opt/`
+找到：`socks5_config.json`上传至中转机的：`/opt/`
 
 **中转机执行**
 
@@ -68,10 +60,7 @@ bash <(curl -Ls https://raw.githubusercontent.com/diandongyun/Transfer/blob/main
 
 导入 v2rayN 配置即可。
 
-</td>
-</tr>
-<tr>
-<td width="50%" valign="top">
+
 
 ### 🌸 socks5 中转 vless
 
@@ -81,8 +70,7 @@ bash <(curl -Ls https://raw.githubusercontent.com/diandongyun/Transfer/blob/main
 bash <(curl -Ls https://raw.githubusercontent.com/diandongyun/Transfer/blob/main/socks5-vless/socks5.sh)
 ```
 
-找到：`socks5_config.json`
-上传至中转机的：`/opt/`
+找到：`socks5_config.json`上传至中转机的：`/opt/`
 
 **中转机执行**
 
@@ -92,8 +80,6 @@ bash <(curl -Ls https://raw.githubusercontent.com/diandongyun/Transfer/blob/main
 
 导入 v2rayN 配置即可。
 
-</td>
-<td width="50%" valign="top">
 
 ### 🌸 vless 中转 socks5
 
@@ -103,8 +89,7 @@ bash <(curl -Ls https://raw.githubusercontent.com/diandongyun/Transfer/blob/main
 bash <(curl -Ls https://raw.githubusercontent.com/diandongyun/Transfer/blob/main/vless-socks5/vless.sh)
 ```
 
-找到 `/opt/` 下的 vless 配置文件
-上传至中转机的：`/opt/`
+找到 `/opt/` 下的 vless 配置文件上传至中转机的：`/opt/`
 
 **中转机执行**
 
@@ -114,9 +99,6 @@ bash <(curl -Ls https://raw.githubusercontent.com/diandongyun/Transfer/blob/main
 
 导入 v2rayN 配置即可。
 
-</td>
-</tr>
-</table>
 
 ---
 
@@ -163,9 +145,4 @@ bash <(curl -Ls https://raw.githubusercontent.com/diandongyun/Transfer/blob/main
 
 ⚠️ **最后提醒：本开源项目仅供交流学习，禁止用于违法用途！**
 
-```
 
-这样布局就成了「梅花交错」样式：协议安装部分用 **左右两列交替** 展示，整体看上去更清晰也更有层次感。  
-
-要不要我帮你把 **落地机 / 中转机命令** 用不同的颜色（例如绿色、蓝色）高亮区分，让梅花排版更直观？
-```
