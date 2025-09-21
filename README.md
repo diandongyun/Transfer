@@ -1,4 +1,5 @@
-![警告](https://via.placeholder.com/1000x50/FF0000/FFFFFF?text=🚨+本开源项目由点动云独家提供技术支持，仅供交流学习使用，禁止用于违法用途，请各位自行遵守+🚨)
+![警告](https://img.shields.io/badge/🚨_本开源项目由点动云独家提供技术支持，仅供交流学习使用，禁止用于违法用途，请各位自行遵守-FF0000?style=for-the-badge)
+
 
 
 
