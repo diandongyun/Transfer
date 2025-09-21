@@ -1,4 +1,10 @@
-![警告](https://via.placeholder.com/1600x120/FF0000/FFFFFF?text=🚨%20本开源项目由点动云独家提供技术支持，仅供交流学习使用，禁止用于违法用途，请各位自行遵守%20🚨)
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="120">
+  <rect width="1600" height="120" fill="#FF0000"/>
+  <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-size="40" fill="#FFFFFF" font-weight="bold">
+    🚨 本开源项目由点动云独家提供技术支持，仅供交流学习使用，禁止用于违法用途，请各位自行遵守 🚨
+  </text>
+</svg>
+
 
 
 
